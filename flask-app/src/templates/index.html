@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bluetooth Device Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Bluetooth Device Manager</h1>
+    <button id="scan">Scan for Devices</button>
+    <div id="loading">
+        <div class="spinner"></div>
+        Scanning for devices...
+    </div>
+    
+    <ul id="devices"></ul>
+
+    <h2>Connected Devices</h2>
+    <ul id="connections"></ul>
+
+    <h2>Media Control</h2>
+    <button id="toggle-tone" class="toggle-button">Start Tone</button>
+    <ul id="media-control"></ul>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/toggle-tone.js') }}"></script>
+</body>
+</html>
