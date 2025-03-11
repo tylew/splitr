@@ -1,0 +1,14 @@
+{
+  "board": "nrf5340_audio_dk_nrf5340_cpuapp",
+  "boardRevision": "",
+  "boardDir": "/opt/nordic/ncs/v2.6.2/zephyr/boards/arm/nrf5340_audio_dk_nrf5340",
+  "shouldBuild": true,
+  "optimizations": "none",
+  "cmakeArgs": [],
+  "confFiles": [],
+  "buildDirectory": "build",
+  "kconfigFragments": [],
+  "snippets": [],
+  "dtcOverlays": [],
+  "extraDtcOverlays": []
+}

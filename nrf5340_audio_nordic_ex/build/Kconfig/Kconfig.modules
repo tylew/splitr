@@ -1,0 +1,150 @@
+menu "nrf (/opt/nordic/ncs/v2.6.2/nrf)"
+osource "/opt/nordic/ncs/v2.6.2/nrf/Kconfig.nrf"
+config ZEPHYR_NRF_MODULE
+	bool
+	default y
+endmenu
+menu "mcuboot (/opt/nordic/ncs/v2.6.2/bootloader/mcuboot)"
+osource "$(ZEPHYR_MCUBOOT_KCONFIG)"
+config ZEPHYR_MCUBOOT_MODULE
+	bool
+	default y
+endmenu
+config ZEPHYR_PSA_ARCH_TESTS_MODULE
+   bool
+   default y
+menu "cjson (/opt/nordic/ncs/v2.6.2/modules/lib/cjson)"
+osource "$(ZEPHYR_CJSON_KCONFIG)"
+config ZEPHYR_CJSON_MODULE
+	bool
+	default y
+endmenu
+menu "azure-sdk-for-c (/opt/nordic/ncs/v2.6.2/modules/lib/azure-sdk-for-c)"
+osource "$(ZEPHYR_AZURE_SDK_FOR_C_KCONFIG)"
+config ZEPHYR_AZURE_SDK_FOR_C_MODULE
+	bool
+	default y
+endmenu
+menu "cirrus-logic (/opt/nordic/ncs/v2.6.2/modules/hal/cirrus-logic)"
+osource "/opt/nordic/ncs/v2.6.2/modules/hal/cirrus-logic/Kconfig"
+config ZEPHYR_CIRRUS_LOGIC_MODULE
+	bool
+	default y
+endmenu
+menu "openthread (/opt/nordic/ncs/v2.6.2/modules/lib/openthread)"
+osource "$(ZEPHYR_OPENTHREAD_KCONFIG)"
+config ZEPHYR_OPENTHREAD_MODULE
+	bool
+	default y
+endmenu
+menu "memfault-firmware-sdk (/opt/nordic/ncs/v2.6.2/modules/lib/memfault-firmware-sdk)"
+osource "/opt/nordic/ncs/v2.6.2/modules/lib/memfault-firmware-sdk/ports/zephyr/Kconfig"
+config ZEPHYR_MEMFAULT_FIRMWARE_SDK_MODULE
+	bool
+	default y
+endmenu
+menu "canopennode (/opt/nordic/ncs/v2.6.2/modules/lib/canopennode)"
+osource "$(ZEPHYR_CANOPENNODE_KCONFIG)"
+config ZEPHYR_CANOPENNODE_MODULE
+	bool
+	default y
+endmenu
+menu "lz4 (/opt/nordic/ncs/v2.6.2/modules/lib/lz4)"
+osource "$(ZEPHYR_LZ4_KCONFIG)"
+config ZEPHYR_LZ4_MODULE
+	bool
+	default y
+endmenu
+config ZEPHYR_TF_M_TESTS_MODULE
+   bool
+   default y
+menu "zscilib (/opt/nordic/ncs/v2.6.2/modules/lib/zscilib)"
+osource "/opt/nordic/ncs/v2.6.2/modules/lib/zscilib/Kconfig.zscilib"
+config ZEPHYR_ZSCILIB_MODULE
+	bool
+	default y
+endmenu
+menu "cmsis (/opt/nordic/ncs/v2.6.2/modules/hal/cmsis)"
+osource "$(ZEPHYR_CMSIS_KCONFIG)"
+config ZEPHYR_CMSIS_MODULE
+	bool
+	default y
+endmenu
+menu "cmsis-dsp (/opt/nordic/ncs/v2.6.2/modules/lib/cmsis-dsp)"
+osource "$(ZEPHYR_CMSIS_DSP_KCONFIG)"
+config ZEPHYR_CMSIS_DSP_MODULE
+	bool
+	default y
+endmenu
+menu "cmsis-nn (/opt/nordic/ncs/v2.6.2/modules/lib/cmsis-nn)"
+osource "$(ZEPHYR_CMSIS_NN_KCONFIG)"
+config ZEPHYR_CMSIS_NN_MODULE
+	bool
+	default y
+endmenu
+menu "fatfs (/opt/nordic/ncs/v2.6.2/modules/fs/fatfs)"
+osource "$(ZEPHYR_FATFS_KCONFIG)"
+config ZEPHYR_FATFS_MODULE
+	bool
+	default y
+endmenu
+menu "hal_nordic (/opt/nordic/ncs/v2.6.2/modules/hal/nordic)"
+osource "$(ZEPHYR_HAL_NORDIC_KCONFIG)"
+config ZEPHYR_HAL_NORDIC_MODULE
+	bool
+	default y
+endmenu
+config ZEPHYR_HAL_WURTHELEKTRONIK_MODULE
+   bool
+   default y
+config ZEPHYR_LIBMETAL_MODULE
+   bool
+   default y
+menu "liblc3 (/opt/nordic/ncs/v2.6.2/modules/lib/liblc3)"
+osource "$(ZEPHYR_LIBLC3_KCONFIG)"
+config ZEPHYR_LIBLC3_MODULE
+	bool
+	default y
+endmenu
+menu "littlefs (/opt/nordic/ncs/v2.6.2/modules/fs/littlefs)"
+osource "$(ZEPHYR_LITTLEFS_KCONFIG)"
+config ZEPHYR_LITTLEFS_MODULE
+	bool
+	default y
+endmenu
+menu "loramac-node (/opt/nordic/ncs/v2.6.2/modules/lib/loramac-node)"
+osource "$(ZEPHYR_LORAMAC_NODE_KCONFIG)"
+config ZEPHYR_LORAMAC_NODE_MODULE
+	bool
+	default y
+endmenu
+config ZEPHYR_MIPI_SYS_T_MODULE
+   bool
+   default y
+config ZEPHYR_NRF_HW_MODELS_MODULE
+   bool
+   default y
+config ZEPHYR_OPEN_AMP_MODULE
+   bool
+   default y
+menu "segger (/opt/nordic/ncs/v2.6.2/modules/debug/segger)"
+osource "$(ZEPHYR_SEGGER_KCONFIG)"
+config ZEPHYR_SEGGER_MODULE
+	bool
+	default y
+endmenu
+config ZEPHYR_TINYCRYPT_MODULE
+   bool
+   default y
+menu "uoscore-uedhoc (/opt/nordic/ncs/v2.6.2/modules/lib/uoscore-uedhoc)"
+osource "$(ZEPHYR_UOSCORE_UEDHOC_KCONFIG)"
+config ZEPHYR_UOSCORE_UEDHOC_MODULE
+	bool
+	default y
+endmenu
+menu "zcbor (/opt/nordic/ncs/v2.6.2/modules/lib/zcbor)"
+osource "$(ZEPHYR_ZCBOR_KCONFIG)"
+config ZEPHYR_ZCBOR_MODULE
+	bool
+	default y
+endmenu

@@ -1,0 +1,6 @@
+menu "nrf (/opt/nordic/ncs/v2.6.2/nrf)"
+osource "/opt/nordic/ncs/v2.6.2/nrf/sysbuild/Kconfig.sysbuild"
+config ZEPHYR_NRF_MODULE
+	bool
+	default y
+endmenu
