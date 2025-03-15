@@ -1,0 +1,59 @@
+CONFIG_BUTTON_1=0x0B  # Adjust pin number as needed
+CONFIG_LOG_DEFAULT_LEVEL=3
+
+# Audio configuration
+config AUDIO_SAMPLE_RATE_HZ
+    int "Audio sample rate in Hz"
+    default 48000
+    help
+      Sample rate for audio processing
+
+config AUDIO_BIT_DEPTH_BITS
+    int "Audio bit depth in bits"
+    default 16
+    help
+      Bit depth for audio samples
+
+config AUDIO_FRAME_DURATION_US
+    int "Audio frame duration in microseconds"
+    default 10000
+    help
+      Duration of each audio frame
+
+# Button configuration
+config BUTTON_1
+    int "GPIO pin number for mode switch button"
+    default 11
+    help
+      GPIO pin number for the mode switch button
+
+# Audio buffer sizes
+config BUF_BLE_RX_PACKET_NUM
+    int "Number of BLE RX packets to buffer"
+    default 5
+    help
+      Number of BLE packets to buffer for audio reception
+
+# Enable required features
+config BT_AUDIO
+    bool
+    default y
+
+config BT_BAP_BROADCAST_SOURCE
+    bool
+    default y if TRANSPORT_BIS
+
+config BT_BAP_BROADCAST_SINK
+    bool
+    default y if TRANSPORT_BIS
+
+config BT_BAP_SCAN_DELEGATOR
+    bool
+    default y if TRANSPORT_BIS
+
+config AUDIO_SOURCE_I2S
+    bool "Use I2S as audio source"
+    default y
+    help
+      Enable I2S as the audio source/sink
+
