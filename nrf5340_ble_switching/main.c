@@ -12,6 +12,7 @@
 #include "le_audio_rx.h"
 #include "button_handler.h"
 #include "macros_common.h"
+#include "src/uart_handler.h"
 
 #include <zephyr/logging/log.h>
 LOG_MODULE_REGISTER(main, CONFIG_LOG_DEFAULT_LEVEL);
@@ -172,6 +173,13 @@ int main(void)
         return ret;
     }
 
+    /* Initialize UART handler */
+    ret = uart_handler_init();
+    if (ret) {
+        LOG_ERR("Failed to initialize UART handler: %d", ret);
+        return ret;
+    }
+
     /* Configure initial audio settings */
     ret = audio_system_config_set(AUDIO_SAMPLE_RATE_HZ, 
                                  AUDIO_BITRATE,
@@ -193,6 +201,7 @@ int main(void)
 
     LOG_INF("Application started in BROADCAST mode");
     LOG_INF("Press PLAY/PAUSE button to switch modes");
+    LOG_INF("UART communication enabled (115200 baud, RX on pin 16)");
 
     return 0;
 }
