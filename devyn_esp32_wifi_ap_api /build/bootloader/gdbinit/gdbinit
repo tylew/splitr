@@ -1,0 +1,2 @@
+source /Users/devyn/splitr/esp32_wifi_ap_api/build/bootloader/gdbinit/symbols
+source /Users/devyn/splitr/esp32_wifi_ap_api/build/bootloader/gdbinit/connect
