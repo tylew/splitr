@@ -5,6 +5,8 @@
 #include "esp_http_server.h"
 #include "esp_err.h"
 #include "driver/uart.h"
+#include "audio_player.h"
+#include "sample_mp3.h"
 
 #define EXAMPLE_ESP_WIFI_SSID      "ESP32-Access-Point"
 #define EXAMPLE_ESP_WIFI_PASS      "123456789"
@@ -15,6 +17,9 @@
 #define UART_TX_PIN 17
 #define UART_RX_PIN 16
 #define UART_BAUD_RATE 115200
+
+// I2S port number
+#define I2S_PORT_NUM 0
 
 static const char *TAG = "esp32_ap_api";
 
@@ -88,6 +93,34 @@ static esp_err_t data_get_handler(httpd_req_t *req) {
         // Original data endpoint
         strcpy(resp_str, "{\"message\": \"Hello, World!\"}");
     }
+    // New MP3 playback endpoints
+    else if (strcmp(uri, "/api/mp3/play") == 0) {
+        // Start MP3 playback of sample file
+        esp_err_t ret = audio_player_play_mp3("/sample.mp3");
+        if (ret == ESP_OK) {
+            strcpy(resp_str, "{\"status\": \"Started MP3 playback\"}");
+        } else {
+            sprintf(resp_str, "{\"error\": \"Failed to start MP3 playback: %s\"}", esp_err_to_name(ret));
+        }
+    }
+    else if (strcmp(uri, "/api/mp3/stop") == 0) {
+        // Stop MP3 playback
+        esp_err_t ret = audio_player_stop();
+        if (ret == ESP_OK) {
+            strcpy(resp_str, "{\"status\": \"Stopped MP3 playback\"}");
+        } else {
+            sprintf(resp_str, "{\"error\": \"Failed to stop MP3 playback: %s\"}", esp_err_to_name(ret));
+        }
+    }
+    else if (strcmp(uri, "/api/mp3/play-embedded") == 0) {
+        // Play MP3 data from the embedded sample
+        esp_err_t ret = audio_player_play_mp3_data(sample_mp3, sample_mp3_len);
+        if (ret == ESP_OK) {
+            strcpy(resp_str, "{\"status\": \"Started playing embedded MP3 sample\"}");
+        } else {
+            sprintf(resp_str, "{\"error\": \"Failed to start embedded MP3 playback: %s\"}", esp_err_to_name(ret));
+        }
+    }
     else {
         // Unknown command
         strcpy(resp_str, "{\"error\": \"Unknown command\"}");
@@ -130,11 +163,36 @@ void start_rest_server(void) {
         .user_ctx  = NULL
     };
 
+    // New MP3 endpoints
+    httpd_uri_t mp3_play_uri = {
+        .uri       = "/api/mp3/play",
+        .method    = HTTP_GET,
+        .handler   = data_get_handler,
+        .user_ctx  = NULL
+    };
+
+    httpd_uri_t mp3_stop_uri = {
+        .uri       = "/api/mp3/stop",
+        .method    = HTTP_GET,
+        .handler   = data_get_handler,
+        .user_ctx  = NULL
+    };
+
+    httpd_uri_t mp3_embedded_uri = {
+        .uri       = "/api/mp3/play-embedded",
+        .method    = HTTP_GET,
+        .handler   = data_get_handler,
+        .user_ctx  = NULL
+    };
+
     if (httpd_start(&server, &config) == ESP_OK) {
         httpd_register_uri_handler(server, &data_uri);
         httpd_register_uri_handler(server, &play_uri);
         httpd_register_uri_handler(server, &pause_uri);
         httpd_register_uri_handler(server, &volume_uri);
+        httpd_register_uri_handler(server, &mp3_play_uri);
+        httpd_register_uri_handler(server, &mp3_stop_uri);
+        httpd_register_uri_handler(server, &mp3_embedded_uri);
         ESP_LOGI(TAG, "HTTP server started");
     }
 }
@@ -165,6 +223,10 @@ void app_main(void) {
 
     // Initialize Wi-Fi
     wifi_init_softap();
+
+    // Initialize Audio Player
+    ESP_ERROR_CHECK(audio_player_init(I2S_PORT_NUM));
+    ESP_LOGI(TAG, "Audio player initialized");
 
     // Start HTTP server
     start_rest_server();
