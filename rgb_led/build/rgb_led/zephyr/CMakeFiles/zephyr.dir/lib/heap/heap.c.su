@@ -1,0 +1,17 @@
+/opt/nordic/ncs/v3.0.0/zephyr/lib/heap/heap.h:147:20:set_chunk_used	0	static
+/opt/nordic/ncs/v3.0.0/zephyr/lib/heap/heap.c:24:14:chunk_mem	0	static
+/opt/nordic/ncs/v3.0.0/zephyr/lib/heap/heap.c:34:13:free_list_remove_bidx	4	static
+/opt/nordic/ncs/v3.0.0/zephyr/lib/heap/heap.c:68:13:free_list_add_bidx	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/lib/heap/heap.c:109:13:split_chunks	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/lib/heap/heap.c:125:13:merge_chunks	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/lib/heap/heap.c:157:18:mem_to_chunkid	0	static
+/opt/nordic/ncs/v3.0.0/zephyr/lib/heap/heap.c:60:13:free_list_remove	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/lib/heap/heap.c:98:13:free_list_add	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/lib/heap/heap.c:133:13:free_chunk	24	static
+/opt/nordic/ncs/v3.0.0/zephyr/lib/heap/heap.c:211:18:alloc_chunk	24	static
+/opt/nordic/ncs/v3.0.0/zephyr/lib/heap/heap.c:163:6:sys_heap_free	16	static
+/opt/nordic/ncs/v3.0.0/zephyr/lib/heap/heap.c:200:8:sys_heap_usable_size	16	static
+/opt/nordic/ncs/v3.0.0/zephyr/lib/heap/heap.c:263:7:sys_heap_alloc	16	static
+/opt/nordic/ncs/v3.0.0/zephyr/lib/heap/heap.c:301:7:sys_heap_aligned_alloc	32	static
+/opt/nordic/ncs/v3.0.0/zephyr/lib/heap/heap.c:379:7:sys_heap_aligned_realloc	56	static
+/opt/nordic/ncs/v3.0.0/zephyr/lib/heap/heap.c:485:6:sys_heap_init	24	static

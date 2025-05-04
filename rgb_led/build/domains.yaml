@@ -1,0 +1,7 @@
+default: rgb_led
+build_dir: /opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led/build
+domains:
+  - name: rgb_led
+    build_dir: /opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led/build/rgb_led
+flash_order:
+  - rgb_led

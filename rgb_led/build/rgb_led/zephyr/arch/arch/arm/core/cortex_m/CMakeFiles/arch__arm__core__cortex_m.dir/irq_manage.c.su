@@ -1,0 +1,8 @@
+/opt/nordic/ncs/v3.0.0/modules/hal/cmsis/CMSIS/Core/Include/core_cm33.h:2390:22:__NVIC_EnableIRQ	0	static
+/opt/nordic/ncs/v3.0.0/modules/hal/cmsis/CMSIS/Core/Include/core_cm33.h:2428:22:__NVIC_DisableIRQ	0	static
+/opt/nordic/ncs/v3.0.0/modules/hal/cmsis/CMSIS/Core/Include/core_cm33.h:2587:22:__NVIC_SetPriority	0	static
+/opt/nordic/ncs/v3.0.0/zephyr/arch/arm/core/cortex_m/irq_manage.c:37:6:arch_irq_enable	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/arch/arm/core/cortex_m/irq_manage.c:42:6:arch_irq_disable	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/arch/arm/core/cortex_m/irq_manage.c:47:5:arch_irq_is_enabled	0	static
+/opt/nordic/ncs/v3.0.0/zephyr/arch/arm/core/cortex_m/irq_manage.c:61:6:z_arm_irq_priority_set	16	static
+/opt/nordic/ncs/v3.0.0/zephyr/arch/arm/core/cortex_m/irq_manage.c:107:6:z_irq_spurious	8	static

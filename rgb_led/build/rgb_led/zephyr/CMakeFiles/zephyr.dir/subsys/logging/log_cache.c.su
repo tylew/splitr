@@ -1,0 +1,5 @@
+/opt/nordic/ncs/v3.0.0/zephyr/include/zephyr/sys/slist.h:408:1:sys_slist_remove	0	static
+/opt/nordic/ncs/v3.0.0/zephyr/subsys/logging/log_cache.c:24:5:log_cache_init	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/subsys/logging/log_cache.c:53:6:log_cache_get	32	static
+/opt/nordic/ncs/v3.0.0/zephyr/subsys/logging/log_cache.c:97:6:log_cache_put	0	static
+/opt/nordic/ncs/v3.0.0/zephyr/subsys/logging/log_cache.c:105:6:log_cache_release	0	static

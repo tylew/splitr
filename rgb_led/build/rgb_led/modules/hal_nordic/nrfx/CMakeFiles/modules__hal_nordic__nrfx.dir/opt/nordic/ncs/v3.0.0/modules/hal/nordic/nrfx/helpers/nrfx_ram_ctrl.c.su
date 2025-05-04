@@ -1,0 +1,5 @@
+/opt/nordic/ncs/v3.0.0/modules/hal/nordic/nrfx/helpers/nrfx_ram_ctrl.c:216:13:ram_ctrl_block_section_power_enable_set	0	static
+/opt/nordic/ncs/v3.0.0/modules/hal/nordic/nrfx/helpers/nrfx_ram_ctrl.c:223:13:ram_ctrl_block_section_retention_enable_set	0	static
+/opt/nordic/ncs/v3.0.0/modules/hal/nordic/nrfx/helpers/nrfx_ram_ctrl.c:230:13:ram_ctrl_block_section_iterate	24	static
+/opt/nordic/ncs/v3.0.0/modules/hal/nordic/nrfx/helpers/nrfx_ram_ctrl.c:274:6:nrfx_ram_ctrl_power_enable_set	8	static
+/opt/nordic/ncs/v3.0.0/modules/hal/nordic/nrfx/helpers/nrfx_ram_ctrl.c:282:6:nrfx_ram_ctrl_retention_enable_set	8	static

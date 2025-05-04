@@ -1,0 +1,2 @@
+/opt/nordic/ncs/v3.0.0/zephyr/lib/os/assert.c:26:13:assert_post_action	0	static
+/opt/nordic/ncs/v3.0.0/zephyr/lib/os/assert.c:47:6:assert_print	16	static

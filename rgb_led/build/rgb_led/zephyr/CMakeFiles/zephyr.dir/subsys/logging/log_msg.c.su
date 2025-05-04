@@ -1,0 +1,11 @@
+/opt/nordic/ncs/v3.0.0/zephyr/include/zephyr/sys/cbprintf.h:528:19:z_cbprintf_cpy	16	static
+/opt/nordic/ncs/v3.0.0/zephyr/include/zephyr/sys/cbprintf.h:572:19:cbprintf_package_copy	40	static
+/opt/nordic/ncs/v3.0.0/zephyr/subsys/logging/log_msg.c:31:6:z_log_msg_finalize	16	static
+/opt/nordic/ncs/v3.0.0/zephyr/subsys/logging/log_msg.c:93:13:z_log_msg_simple_create	40	static
+/opt/nordic/ncs/v3.0.0/zephyr/subsys/logging/log_msg.c:130:6:z_impl_z_log_msg_simple_create_0	16	static
+/opt/nordic/ncs/v3.0.0/zephyr/subsys/logging/log_msg.c:179:6:z_impl_z_log_msg_simple_create_1	16	static
+/opt/nordic/ncs/v3.0.0/zephyr/subsys/logging/log_msg.c:229:6:z_impl_z_log_msg_simple_create_2	24	static
+/opt/nordic/ncs/v3.0.0/zephyr/subsys/logging/log_msg.c:280:6:z_impl_z_log_msg_static_create	120	dynamic,bounded
+/opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led/build/rgb_led/zephyr/include/generated/zephyr/syscalls/log_msg.h:107:20:z_log_msg_static_create	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/subsys/logging/log_msg.c:345:6:z_log_msg_runtime_vcreate	56	static
+/opt/nordic/ncs/v3.0.0/zephyr/subsys/logging/log_msg.c:402:9:log_msg_get_source_id	0	static

@@ -1,0 +1,52 @@
+cmake:
+  application:
+    configuration-dir: /opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led
+    source-dir: /opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led
+  board:
+    name: nrf5340_audio_dk
+    path:
+     - /opt/nordic/ncs/v3.0.0/zephyr/boards/nordic/nrf5340_audio_dk
+    qualifiers: nrf5340/cpuapp
+    revision: 
+  devicetree:
+    bindings-dirs:
+     - /opt/nordic/ncs/v3.0.0/zephyr/dts/bindings
+    files:
+     - /opt/nordic/ncs/v3.0.0/zephyr/boards/nordic/nrf5340_audio_dk/nrf5340_audio_dk_nrf5340_cpuapp.dts
+    include-dirs:
+     - /opt/nordic/ncs/v3.0.0/modules/hal/atmel/include
+     - /opt/nordic/ncs/v3.0.0/modules/hal/gigadevice/include
+     - /opt/nordic/ncs/v3.0.0/modules/hal/microchip/dts
+     - /opt/nordic/ncs/v3.0.0/modules/hal/nuvoton/dts
+     - /opt/nordic/ncs/v3.0.0/modules/hal/nxp/dts
+     - /opt/nordic/ncs/v3.0.0/modules/hal/stm32/dts
+     - /opt/nordic/ncs/v3.0.0/zephyr/include
+     - /opt/nordic/ncs/v3.0.0/zephyr/include/zephyr
+     - /opt/nordic/ncs/v3.0.0/zephyr/dts/common
+     - /opt/nordic/ncs/v3.0.0/zephyr/dts/x86
+     - /opt/nordic/ncs/v3.0.0/zephyr/dts/xtensa
+     - /opt/nordic/ncs/v3.0.0/zephyr/dts/sparc
+     - /opt/nordic/ncs/v3.0.0/zephyr/dts/riscv
+     - /opt/nordic/ncs/v3.0.0/zephyr/dts/posix
+     - /opt/nordic/ncs/v3.0.0/zephyr/dts/nios2
+     - /opt/nordic/ncs/v3.0.0/zephyr/dts/arm64
+     - /opt/nordic/ncs/v3.0.0/zephyr/dts/arm
+     - /opt/nordic/ncs/v3.0.0/zephyr/dts/arc
+     - /opt/nordic/ncs/v3.0.0/zephyr/dts
+  kconfig:
+    files:
+     - /opt/nordic/ncs/v3.0.0/zephyr/boards/nordic/nrf5340_audio_dk/nrf5340_audio_dk_nrf5340_cpuapp_defconfig
+     - /opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led/prj.conf
+     - /opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led/build/rgb_led/zephyr/.config.sysbuild
+    user-files:
+     - prj.conf
+  toolchain:
+    name: zephyr
+    path: /opt/nordic/ncs/toolchains/b8efef2ad5/opt/zephyr-sdk
+  vendor-specific:
+    nordic:
+      svdfile: /opt/nordic/ncs/v3.0.0/modules/hal/nordic/nrfx/mdk/nrf5340_application.svd
+  zephyr:
+    version: 4.0.99
+    zephyr-base: /opt/nordic/ncs/v3.0.0/zephyr
+version: 0.1.0

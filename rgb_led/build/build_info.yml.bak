@@ -1,0 +1,22 @@
+cmake:
+  board:
+    name: nrf5340_audio_dk
+    path:
+     - /opt/nordic/ncs/v3.0.0/zephyr/boards/nordic/nrf5340_audio_dk
+    qualifiers: nrf5340/cpuapp
+    revision: 
+  images:
+   - name: rgb_led
+     source-dir: /opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led
+     type: MAIN
+  kconfig:
+    files:
+     - /opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led/build/_sysbuild/empty.conf
+     - /opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led/build/_sysbuild/empty.conf
+    user-files:
+     - /opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led/build/_sysbuild/empty.conf
+version: 0.1.0
+west:
+  command: /opt/nordic/ncs/toolchains/b8efef2ad5/bin/west build --build-dir /opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led/build /opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led --pristine --board nrf5340_audio_dk/nrf5340/cpuapp -- -DNCS_TOOLCHAIN_VERSION=NONE -DCONF_FILE=prj.conf -DBOARD_ROOT=/opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led
+  topdir: /opt/nordic/ncs/v3.0.0
+  version: 1.3.0

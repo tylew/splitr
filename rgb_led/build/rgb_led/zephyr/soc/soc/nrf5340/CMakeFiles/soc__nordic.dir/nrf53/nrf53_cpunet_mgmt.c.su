@@ -1,0 +1,7 @@
+/opt/nordic/ncs/v3.0.0/modules/hal/nordic/nrfx/mdk/nrf53_erratas.h:6042:13:nrf53_errata_161	0	static
+/opt/nordic/ncs/v3.0.0/zephyr/soc/nordic/nrf53/nrf53_cpunet_mgmt.c:31:13:onoff_stop	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/soc/nordic/nrf53/nrf53_cpunet_mgmt.c:38:12:nrf53_cpunet_mgmt_init	8	static
+/opt/nordic/ncs/v3.0.0/modules/hal/nordic/nrfx/hal/nrf_reset.h:242:24:nrf_reset_network_force_off	24	static
+/opt/nordic/ncs/v3.0.0/zephyr/soc/nordic/nrf53/nrf53_cpunet_mgmt.c:24:13:onoff_start	16	static
+/opt/nordic/ncs/v3.0.0/zephyr/include/zephyr/sys/notify.h:264:20:sys_notify_init_spinwait	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/soc/nordic/nrf53/nrf53_cpunet_mgmt.c:50:6:nrf53_cpunet_enable	24	static

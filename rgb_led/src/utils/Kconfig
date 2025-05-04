@@ -1,0 +1,31 @@
+#
+# Copyright (c) 2024 Nordic Semiconductor ASA
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+menu "LED Configuration"
+
+config MODULE_LED
+	bool "LED module"
+	default y
+	help
+	  Enable LED module
+
+if MODULE_LED
+
+config MODULE_LED_LOG_LEVEL
+	int "LED module log level"
+	range 0 4
+	default 3
+	help
+	  Sets log level for LED module.
+	  0: off
+	  1: error
+	  2: warning
+	  3: info
+	  4: debug
+
+endif # MODULE_LED
+
+endmenu # LED Configuration

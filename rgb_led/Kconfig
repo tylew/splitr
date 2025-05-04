@@ -1,0 +1,30 @@
+#
+# Copyright (c) 2024 Nordic Semiconductor ASA
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# Main menu configuration
+mainmenu "RGB LED sample"
+
+# Include Zephyr's Kconfig
+source "Kconfig.zephyr"
+
+menu "Main Configuration"
+
+config MAIN_LOG_LEVEL
+	int "Main module log level"
+	range 0 4
+	default 3
+	help
+	  Sets log level for main module.
+	  0: off
+	  1: error
+	  2: warning
+	  3: info
+	  4: debug
+
+endmenu # Main Configuration
+
+# Include utils configuration
+rsource "src/utils/Kconfig" 

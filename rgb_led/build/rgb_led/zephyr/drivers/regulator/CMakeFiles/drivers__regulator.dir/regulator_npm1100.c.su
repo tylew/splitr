@@ -1,0 +1,9 @@
+/opt/nordic/ncs/v3.0.0/zephyr/include/zephyr/drivers/gpio.h:1292:19:gpio_port_get	16	static
+/opt/nordic/ncs/v3.0.0/zephyr/include/zephyr/drivers/gpio.h:1580:19:gpio_pin_get	16	static
+/opt/nordic/ncs/v3.0.0/zephyr/drivers/regulator/regulator_npm1100.c:41:12:regulator_npm1100_get_mode	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/include/zephyr/drivers/gpio.h:1628:19:gpio_pin_set_raw	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/include/zephyr/drivers/gpio.h:1668:19:gpio_pin_set	16	static
+/opt/nordic/ncs/v3.0.0/zephyr/drivers/regulator/regulator_npm1100.c:28:12:regulator_npm1100_set_mode	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/include/zephyr/drivers/gpio.h:976:19:z_impl_gpio_pin_configure	24	static
+/opt/nordic/ncs/v3.0.0/zephyr/include/zephyr/drivers/gpio.h:1044:19:gpio_pin_configure_dt	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/drivers/regulator/regulator_npm1100.c:83:12:regulator_npm1100_common_init	8	static

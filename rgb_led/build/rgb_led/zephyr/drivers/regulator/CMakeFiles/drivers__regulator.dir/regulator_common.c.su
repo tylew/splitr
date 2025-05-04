@@ -1,0 +1,11 @@
+/opt/nordic/ncs/v3.0.0/zephyr/include/zephyr/drivers/regulator.h:488:19:regulator_list_voltage	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/drivers/regulator/regulator_common.c:10:13:regulator_delay	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/drivers/regulator/regulator_common.c:17:6:regulator_common_data_init	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/drivers/regulator/regulator_common.c:105:5:regulator_enable	24	static
+/opt/nordic/ncs/v3.0.0/zephyr/drivers/regulator/regulator_common.c:144:6:regulator_is_enabled	16	static
+/opt/nordic/ncs/v3.0.0/zephyr/drivers/regulator/regulator_common.c:165:5:regulator_disable	16	static
+/opt/nordic/ncs/v3.0.0/zephyr/drivers/regulator/regulator_common.c:204:6:regulator_is_supported_voltage	32	static
+/opt/nordic/ncs/v3.0.0/zephyr/drivers/regulator/regulator_common.c:230:5:regulator_set_voltage	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/drivers/regulator/regulator_common.c:248:5:regulator_set_current_limit	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/drivers/regulator/regulator_common.c:266:5:regulator_set_mode	16	static
+/opt/nordic/ncs/v3.0.0/zephyr/drivers/regulator/regulator_common.c:27:5:regulator_common_init	32	static

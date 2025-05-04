@@ -1,0 +1,7 @@
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/kheap.c:15:6:k_heap_init	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/kheap.c:23:12:statics_init	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/kheap.c:65:7:k_heap_aligned_alloc	72	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/kheap.c:108:7:k_heap_alloc	16	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/kheap.c:119:7:k_heap_calloc	16	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/kheap.c:138:7:k_heap_realloc	64	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/kheap.c:168:6:k_heap_free	24	static

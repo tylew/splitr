@@ -1,0 +1,5 @@
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/include/ksched.h:159:20:unpend_thread_no_timeout	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/sem.c:45:5:z_impl_k_sem_init	0	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/sem.c:96:6:z_impl_k_sem_give	24	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/sem.c:132:5:z_impl_k_sem_take	32	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/sem.c:166:6:z_impl_k_sem_reset	16	static
