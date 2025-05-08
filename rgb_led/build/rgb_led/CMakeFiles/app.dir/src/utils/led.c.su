@@ -1,0 +1,15 @@
+/opt/nordic/ncs/v3.0.0/zephyr/include/zephyr/drivers/gpio.h:1628:19:gpio_pin_set_raw	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/include/zephyr/drivers/gpio.h:1668:19:gpio_pin_set	16	static
+/opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led/src/utils/led.c:142:12:led_set_int	16	static
+/opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led/src/utils/led.c:214:12:led_set	16	static
+/opt/nordic/ncs/v3.0.0/zephyr/include/zephyr/drivers/gpio.h:976:19:z_impl_gpio_pin_configure	24	static
+/opt/nordic/ncs/v3.0.0/zephyr/include/zephyr/drivers/gpio.h:1044:19:gpio_pin_configure_dt	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led/src/utils/led.c:194:13:led_blink_work_handler	16	static
+/opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led/src/utils/led.c:184:6:led_blink_timer_handler	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led/src/utils/led.c:62:12:configure_led_color	16	static
+/opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led/src/utils/led.c:79:12:config_led_monochrome	16	static
+/opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led/src/utils/led.c:95:12:led_device_tree_parse	32	static
+/opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led/src/utils/led.c:233:5:led_on	16	static
+/opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led/src/utils/led.c:253:5:led_blink	16	static
+/opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led/src/utils/led.c:275:5:led_off	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led/src/utils/led.c:280:5:led_init	16	static

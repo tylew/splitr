@@ -1,0 +1,7 @@
+/opt/nordic/ncs/v3.0.0/zephyr/include/zephyr/logging/log_output.h:215:20:log_output_flush	24	static
+/opt/nordic/ncs/v3.0.0/zephyr/subsys/logging/backends/log_backend_uart.c:82:12:char_out	16	static
+/opt/nordic/ncs/v3.0.0/zephyr/subsys/logging/backends/log_backend_uart.c:137:12:format_set	0	static
+/opt/nordic/ncs/v3.0.0/zephyr/subsys/logging/backends/log_backend_uart.c:184:13:panic	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/subsys/logging/backends/log_backend_uart.c:147:13:log_backend_uart_init	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/subsys/logging/backends/log_backend_uart.c:209:13:dropped	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/subsys/logging/backends/log_backend_uart.c:126:13:process	16	static

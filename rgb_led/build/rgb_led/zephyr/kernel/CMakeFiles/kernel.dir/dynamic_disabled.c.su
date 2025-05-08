@@ -1,0 +1,2 @@
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/dynamic_disabled.c:12:19:z_impl_k_thread_stack_alloc	0	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/dynamic_disabled.c:20:5:z_impl_k_thread_stack_free	0	static

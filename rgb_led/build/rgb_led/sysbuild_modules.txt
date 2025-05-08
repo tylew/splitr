@@ -1,0 +1,1 @@
+"mcuboot":"/opt/nordic/ncs/v3.0.0/bootloader/mcuboot":"/opt/nordic/ncs/v3.0.0/bootloader/mcuboot/boot/zephyr/sysbuild"

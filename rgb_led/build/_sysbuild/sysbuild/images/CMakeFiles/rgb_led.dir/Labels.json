@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led/build/_sysbuild/sysbuild/images/CMakeFiles/rgb_led"
+		},
+		{
+			"file" : "/opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led/build/_sysbuild/sysbuild/images/CMakeFiles/rgb_led.rule"
+		},
+		{
+			"file" : "/opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led/build/_sysbuild/sysbuild/images/CMakeFiles/rgb_led-complete.rule"
+		},
+		{
+			"file" : "/opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led/build/_sysbuild/sysbuild/images/rgb_led-prefix/src/rgb_led-stamp/rgb_led-build.rule"
+		},
+		{
+			"file" : "/opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led/build/_sysbuild/sysbuild/images/rgb_led-prefix/src/rgb_led-stamp/rgb_led-configure.rule"
+		},
+		{
+			"file" : "/opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led/build/_sysbuild/sysbuild/images/rgb_led-prefix/src/rgb_led-stamp/rgb_led-download.rule"
+		},
+		{
+			"file" : "/opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led/build/_sysbuild/sysbuild/images/rgb_led-prefix/src/rgb_led-stamp/rgb_led-install.rule"
+		},
+		{
+			"file" : "/opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led/build/_sysbuild/sysbuild/images/rgb_led-prefix/src/rgb_led-stamp/rgb_led-mkdir.rule"
+		},
+		{
+			"file" : "/opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led/build/_sysbuild/sysbuild/images/rgb_led-prefix/src/rgb_led-stamp/rgb_led-patch.rule"
+		},
+		{
+			"file" : "/opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led/build/_sysbuild/sysbuild/images/rgb_led-prefix/src/rgb_led-stamp/rgb_led-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"rgb_led"
+		],
+		"name" : "rgb_led"
+	}
+}

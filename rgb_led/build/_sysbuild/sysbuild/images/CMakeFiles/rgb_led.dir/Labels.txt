@@ -1,0 +1,13 @@
+# Target labels
+ rgb_led
+# Source files and their labels
+/opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led/build/_sysbuild/sysbuild/images/CMakeFiles/rgb_led
+/opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led/build/_sysbuild/sysbuild/images/CMakeFiles/rgb_led.rule
+/opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led/build/_sysbuild/sysbuild/images/CMakeFiles/rgb_led-complete.rule
+/opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led/build/_sysbuild/sysbuild/images/rgb_led-prefix/src/rgb_led-stamp/rgb_led-build.rule
+/opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led/build/_sysbuild/sysbuild/images/rgb_led-prefix/src/rgb_led-stamp/rgb_led-configure.rule
+/opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led/build/_sysbuild/sysbuild/images/rgb_led-prefix/src/rgb_led-stamp/rgb_led-download.rule
+/opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led/build/_sysbuild/sysbuild/images/rgb_led-prefix/src/rgb_led-stamp/rgb_led-install.rule
+/opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led/build/_sysbuild/sysbuild/images/rgb_led-prefix/src/rgb_led-stamp/rgb_led-mkdir.rule
+/opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led/build/_sysbuild/sysbuild/images/rgb_led-prefix/src/rgb_led-stamp/rgb_led-patch.rule
+/opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led/build/_sysbuild/sysbuild/images/rgb_led-prefix/src/rgb_led-stamp/rgb_led-update.rule

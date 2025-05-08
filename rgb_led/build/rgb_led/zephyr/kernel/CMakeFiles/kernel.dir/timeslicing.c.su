@@ -1,0 +1,5 @@
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/timeslicing.c:54:13:slice_timeout	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/timeslicing.c:39:6:thread_is_sliceable	0	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/timeslicing.c:68:6:z_reset_time_slice	16	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/timeslicing.c:80:6:k_sched_time_slice_set	24	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/timeslicing.c:103:6:z_time_slice	16	static

@@ -1,0 +1,6 @@
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/mutex.c:82:16:new_prio_for_inheritance	0	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/include/ksched.h:159:20:unpend_thread_no_timeout	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/mutex.c:91:13:adjust_owner_prio	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/mutex.c:55:5:z_impl_k_mutex_init	0	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/mutex.c:105:5:z_impl_k_mutex_lock	32	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/mutex.c:211:5:z_impl_k_mutex_unlock	24	static

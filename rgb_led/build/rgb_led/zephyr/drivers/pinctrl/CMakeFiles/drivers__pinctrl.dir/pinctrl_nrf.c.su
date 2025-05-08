@@ -1,0 +1,7 @@
+/opt/nordic/ncs/v3.0.0/modules/hal/nordic/nrfx/hal/nrf_gpio.h:1501:24:nrf_gpio_pin_present_check	0	static
+/opt/nordic/ncs/v3.0.0/modules/hal/nordic/nrfx/hal/nrf_gpio.h:942:35:nrf_gpio_pin_port_decode	16	static
+/opt/nordic/ncs/v3.0.0/modules/hal/nordic/nrfx/hal/nrf_gpio.h:1179:24:nrf_gpio_pin_clear	16	static
+/opt/nordic/ncs/v3.0.0/modules/hal/nordic/nrfx/hal/nrf_gpio.h:1171:24:nrf_gpio_pin_set	16	static
+/opt/nordic/ncs/v3.0.0/modules/hal/nordic/nrfx/hal/nrf_gpio.h:1197:24:nrf_gpio_pin_write	8	static
+/opt/nordic/ncs/v3.0.0/modules/hal/nordic/nrfx/hal/nrf_gpio.h:979:24:nrf_gpio_cfg	32	static
+/opt/nordic/ncs/v3.0.0/zephyr/drivers/pinctrl/pinctrl_nrf.c:127:5:pinctrl_configure_pins	56	static

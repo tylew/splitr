@@ -1,0 +1,9 @@
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/usage.c:36:13:sched_cpu_update_usage	4	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/usage.c:61:13:sched_thread_update_usage	0	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/usage.c:21:17:usage_now	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/usage.c:74:6:z_sched_usage_start	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/usage.c:99:6:z_sched_usage_stop	16	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/usage.c:122:6:z_sched_cpu_usage	32	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/usage.c:173:6:z_sched_thread_usage	32	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/usage.c:278:6:k_sys_runtime_stats_enable	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/usage.c:311:6:k_sys_runtime_stats_disable	24	static

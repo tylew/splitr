@@ -1,0 +1,24 @@
+{
+  "nrfutil_device_version": "2.7.16",
+  "family": "NRF53_FAMILY",
+  "operations": [
+    {
+      "core": "NRFDL_DEVICE_CORE_APPLICATION",
+      "operation": {
+        "chip_erase_mode": "ERASE_RANGES_TOUCHED_BY_FIRMWARE",
+        "firmware": {
+          "file": "/opt/nordic/ncs/v3.0.0/zephyr/samples/basic/rgb_led/build/rgb_led/zephyr/zephyr.hex"
+        },
+        "type": "program",
+        "verify": "VERIFY_READ"
+      }
+    },
+    {
+      "core": "NRFDL_DEVICE_CORE_APPLICATION",
+      "operation": {
+        "option": "RESET_PIN",
+        "type": "reset"
+      }
+    }
+  ]
+}

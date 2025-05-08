@@ -1,0 +1,4 @@
+/opt/nordic/ncs/v3.0.0/zephyr/arch/arm/core/fatal.c:21:13:esf_dump	112	dynamic,bounded
+/opt/nordic/ncs/v3.0.0/zephyr/arch/arm/core/fatal.c:69:6:z_arm_fatal_error	16	static
+/opt/nordic/ncs/v3.0.0/zephyr/arch/arm/core/fatal.c:106:6:z_do_kernel_oops	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/arch/arm/core/fatal.c:159:20:arch_syscall_oops	40	static

@@ -1,0 +1,2 @@
+/opt/nordic/ncs/v3.0.0/zephyr/lib/utils/notify.c:11:5:sys_notify_validate	0	static
+/opt/nordic/ncs/v3.0.0/zephyr/lib/utils/notify.c:48:29:sys_notify_finalize	8	static

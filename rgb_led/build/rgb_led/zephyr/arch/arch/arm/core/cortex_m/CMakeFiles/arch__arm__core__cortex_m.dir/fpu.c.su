@@ -1,0 +1,2 @@
+/opt/nordic/ncs/v3.0.0/zephyr/arch/arm/core/cortex_m/fpu.c:17:6:z_arm_save_fp_context	0	static
+/opt/nordic/ncs/v3.0.0/zephyr/arch/arm/core/cortex_m/fpu.c:46:6:z_arm_restore_fp_context	0	static

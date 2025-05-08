@@ -1,0 +1,3 @@
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/spinlock_validate.c:9:6:z_spin_lock_valid	0	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/spinlock_validate.c:21:6:z_spin_unlock_valid	0	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/spinlock_validate.c:37:6:z_spin_lock_set_owner	0	static

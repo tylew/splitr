@@ -1,0 +1,12 @@
+/opt/nordic/ncs/v3.0.0/zephyr/lib/os/cbprintf_complete.c:318:15:extract_decimal	0	static
+/opt/nordic/ncs/v3.0.0/zephyr/lib/os/cbprintf_complete.c:339:27:extract_flags	0	static
+/opt/nordic/ncs/v3.0.0/zephyr/lib/os/cbprintf_complete.c:388:27:extract_width	24	static
+/opt/nordic/ncs/v3.0.0/zephyr/lib/os/cbprintf_complete.c:420:27:extract_prec	16	static
+/opt/nordic/ncs/v3.0.0/zephyr/lib/os/cbprintf_complete.c:453:27:extract_length	0	static
+/opt/nordic/ncs/v3.0.0/zephyr/lib/os/cbprintf_complete.c:513:27:extract_specifier	4	static
+/opt/nordic/ncs/v3.0.0/zephyr/lib/os/cbprintf_complete.c:643:27:extract_conversion	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/lib/os/cbprintf_complete.c:763:22:conversion_radix	0	static
+/opt/nordic/ncs/v3.0.0/zephyr/lib/os/cbprintf_complete.c:790:14:encode_uint	40	static
+/opt/nordic/ncs/v3.0.0/zephyr/lib/os/cbprintf_complete.c:1309:20:store_count	0	static
+/opt/nordic/ncs/v3.0.0/zephyr/lib/os/cbprintf_complete.c:1348:12:outs	24	static
+/opt/nordic/ncs/v3.0.0/zephyr/lib/os/cbprintf_complete.c:1369:5:z_cbvprintf_impl	104	static

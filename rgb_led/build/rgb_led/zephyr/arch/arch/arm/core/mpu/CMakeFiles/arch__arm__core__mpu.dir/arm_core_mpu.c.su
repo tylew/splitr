@@ -1,0 +1,2 @@
+/opt/nordic/ncs/v3.0.0/zephyr/arch/arm/core/mpu/arm_core_mpu.c:130:6:z_arm_configure_static_mpu_regions	24	static
+/opt/nordic/ncs/v3.0.0/zephyr/arch/arm/core/mpu/arm_core_mpu.c:182:6:z_arm_configure_dynamic_mpu_regions	8	static

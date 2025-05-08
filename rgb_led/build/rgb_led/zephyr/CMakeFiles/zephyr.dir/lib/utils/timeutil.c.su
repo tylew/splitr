@@ -1,0 +1,9 @@
+/opt/nordic/ncs/v3.0.0/zephyr/lib/utils/timeutil.c:31:16:time_days_from_civil	16	static
+/opt/nordic/ncs/v3.0.0/zephyr/lib/utils/timeutil.c:45:9:timeutil_timegm64	16	static
+/opt/nordic/ncs/v3.0.0/zephyr/lib/utils/timeutil.c:59:8:timeutil_timegm	16	static
+/opt/nordic/ncs/v3.0.0/zephyr/lib/utils/timeutil.c:75:5:timeutil_sync_state_update	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/lib/utils/timeutil.c:97:5:timeutil_sync_state_set_skew	16	static
+/opt/nordic/ncs/v3.0.0/zephyr/lib/utils/timeutil.c:114:7:timeutil_sync_estimate_skew	32	static
+/opt/nordic/ncs/v3.0.0/zephyr/lib/utils/timeutil.c:130:5:timeutil_sync_ref_from_local	56	static
+/opt/nordic/ncs/v3.0.0/zephyr/lib/utils/timeutil.c:158:5:timeutil_sync_local_from_ref	32	static
+/opt/nordic/ncs/v3.0.0/zephyr/lib/utils/timeutil.c:184:9:timeutil_sync_skew_to_ppb	8	static

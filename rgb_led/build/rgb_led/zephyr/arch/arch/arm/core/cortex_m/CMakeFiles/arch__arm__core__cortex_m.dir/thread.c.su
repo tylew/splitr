@@ -1,0 +1,5 @@
+/opt/nordic/ncs/v3.0.0/zephyr/arch/arm/core/cortex_m/thread.c:61:6:arch_new_thread	4	static
+/opt/nordic/ncs/v3.0.0/zephyr/arch/arm/core/cortex_m/thread.c:295:6:configure_builtin_stack_guard	0	static
+/opt/nordic/ncs/v3.0.0/zephyr/arch/arm/core/cortex_m/thread.c:520:6:arch_switch_to_main_thread	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/arch/arm/core/cortex_m/thread.c:596:13:arch_irq_unlock_outlined	0	static
+/opt/nordic/ncs/v3.0.0/zephyr/arch/arm/core/cortex_m/thread.c:605:21:arch_irq_lock_outlined	0	static

@@ -1,0 +1,15 @@
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/init.c:305:12:do_device_init	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/init.c:347:13:z_sys_init_run_level	16	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/init.c:578:13:init_idle_thread	48	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/include/kthread.h:46:20:thread_schedule_new	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/init.c:64:13:z_init_static_threads	32	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/init.c:500:13:bg_thread_main	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/init.c:687:27:switch_to_main_thread	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/init.c:195:13:z_early_memset	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/init.c:208:13:z_early_memcpy	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/init.c:219:6:z_bss_zero	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/init.c:378:5:z_impl_device_init	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/init.c:608:6:z_init_cpu	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/init.c:653:14:prepare_multithreading	40	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/init.c:705:13:z_early_rand_get	24	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/init.c:749:20:z_cstart	8	static

@@ -1,0 +1,2 @@
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/float.c:11:5:z_impl_k_float_disable	0	static
+/opt/nordic/ncs/v3.0.0/zephyr/kernel/float.c:21:5:z_impl_k_float_enable	0	static

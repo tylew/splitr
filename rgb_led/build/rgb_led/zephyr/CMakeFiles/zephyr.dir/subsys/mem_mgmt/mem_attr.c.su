@@ -1,0 +1,2 @@
+/opt/nordic/ncs/v3.0.0/zephyr/subsys/mem_mgmt/mem_attr.c:22:8:mem_attr_get_regions	0	static
+/opt/nordic/ncs/v3.0.0/zephyr/subsys/mem_mgmt/mem_attr.c:29:5:mem_attr_check_buf	0	static

@@ -1,0 +1,12 @@
+/opt/nordic/ncs/v3.0.0/zephyr/arch/arm/core/cortex_m/fault.c:140:13:memory_fault_recoverable	0	static
+/opt/nordic/ncs/v3.0.0/zephyr/arch/arm/core/cortex_m/fault.c:642:20:z_arm_is_synchronous_svc	0	static
+/opt/nordic/ncs/v3.0.0/zephyr/arch/arm/core/cortex_m/fault.c:902:32:get_esf	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/arch/arm/core/cortex_m/fault.c:504:17:usage_fault	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/arch/arm/core/cortex_m/fault.c:616:13:debug_monitor	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/arch/arm/core/cortex_m/fault.c:784:13:reserved_exception	64	dynamic,bounded
+/opt/nordic/ncs/v3.0.0/zephyr/arch/arm/core/cortex_m/fault.c:183:17:mem_manage_fault	24	static
+/opt/nordic/ncs/v3.0.0/zephyr/arch/arm/core/cortex_m/fault.c:342:12:bus_fault	24	static
+/opt/nordic/ncs/v3.0.0/zephyr/arch/arm/core/cortex_m/fault.c:717:17:hard_fault	16	static
+/opt/nordic/ncs/v3.0.0/zephyr/arch/arm/core/cortex_m/fault.c:794:17:fault_handle	8	static
+/opt/nordic/ncs/v3.0.0/zephyr/arch/arm/core/cortex_m/fault.c:1044:6:z_arm_fault	56	static
+/opt/nordic/ncs/v3.0.0/zephyr/arch/arm/core/cortex_m/fault.c:1117:6:z_arm_fault_init	0	static
