@@ -4,6 +4,7 @@ This project sets up an ESP32 to:
 1. Create a WiFi Access Point
 2. Run an HTTP API server
 3. Communicate with an nRF5340 over UART to control BLE audio broadcasting
+4. Play MP3 audio with physical button controls
 
 ## Overview
 
@@ -139,9 +140,12 @@ This project implements an MP3 decoder for the ESP32-S3 with I2S streaming capab
 - Support for MP3 data embedded in the firmware
 - REST API for controlling playback
 - Graceful handling of buffer underflow/overflow
+- Physical button controls for playback and volume
+- Volume control with percentage scaling
 
 ## Hardware Setup
 
+### I2S Configuration
 The I2S pins are configured as follows:
 - BCK (Bit Clock): GPIO 26
 - WS (Word Select): GPIO 25
@@ -149,13 +153,32 @@ The I2S pins are configured as follows:
 
 Connect these pins to your receiving device (NRF5340).
 
+### GPIO Button Controls
+This project supports physical button controls with the following GPIO pins:
+- Play/Pause Button: GPIO 32
+- Stop Button: GPIO 33
+- Volume Up Button: GPIO 25
+- Volume Down Button: GPIO 26
+
+**Note:** The buttons should be connected between the GPIO pin and ground with internal pull-up resistors enabled. The code implements debounce (50ms) and rate limiting (200ms) to prevent multiple triggers.
+
+#### Button Functions:
+- **Play/Pause Button:** Toggle between play and pause states
+- **Stop Button:** Stop playback and reset position
+- **Volume Up Button:** Increase volume by 5% increments (max 100%)
+- **Volume Down Button:** Decrease volume by 5% decrements (min 0%)
+
 ## REST API
 
 The ESP32 provides a REST API for controlling the MP3 playback:
 
 - `/api/mp3/play` - Play an MP3 file named "sample.mp3" from SPIFFS
 - `/api/mp3/stop` - Stop the current playback
+- `/api/mp3/pause` - Toggle between pause and resume states
+- `/api/mp3/volume-up` - Increase volume by 5%
+- `/api/mp3/volume-down` - Decrease volume by 5%
 - `/api/mp3/play-embedded` - Play the MP3 data embedded in the firmware
+- `/api/status` - Get current player status and volume level
 
 ## SPIFFS Storage
 

@@ -6,6 +6,7 @@
 #include "esp_err.h"
 #include "driver/uart.h"
 #include "audio_player.h"
+#include "gpio_controls.h"
 #include "sample_mp3.h"
 
 #define EXAMPLE_ESP_WIFI_SSID      "ESP32-Access-Point"
@@ -84,6 +85,9 @@ static esp_err_t data_get_handler(httpd_req_t *req) {
             sprintf(vol_cmd, "VOL:%d\n", volume);
             send_uart_command(vol_cmd);
             
+            // Also set the volume in the audio player
+            audio_player_set_volume(volume);
+            
             sprintf(resp_str, "{\"status\": \"Volume set to %d\"}", volume);
         } else {
             strcpy(resp_str, "{\"error\": \"Invalid volume level (should be 0-100)\"}");
@@ -112,6 +116,36 @@ static esp_err_t data_get_handler(httpd_req_t *req) {
             sprintf(resp_str, "{\"error\": \"Failed to stop MP3 playback: %s\"}", esp_err_to_name(ret));
         }
     }
+    else if (strcmp(uri, "/api/mp3/pause") == 0) {
+        // Pause or resume MP3 playback
+        esp_err_t ret = audio_player_pause_resume();
+        if (ret == ESP_OK) {
+            bool is_paused = audio_player_is_paused();
+            sprintf(resp_str, "{\"status\": \"MP3 playback %s\"}", is_paused ? "paused" : "resumed");
+        } else {
+            sprintf(resp_str, "{\"error\": \"Failed to pause/resume MP3 playback: %s\"}", esp_err_to_name(ret));
+        }
+    }
+    else if (strcmp(uri, "/api/mp3/volume-up") == 0) {
+        // Increase volume
+        esp_err_t ret = audio_player_volume_up(VOLUME_STEP_PERCENT);
+        if (ret == ESP_OK) {
+            uint8_t volume = audio_player_get_volume();
+            sprintf(resp_str, "{\"status\": \"Volume increased to %d%%\"}", volume);
+        } else {
+            sprintf(resp_str, "{\"error\": \"Failed to increase volume: %s\"}", esp_err_to_name(ret));
+        }
+    }
+    else if (strcmp(uri, "/api/mp3/volume-down") == 0) {
+        // Decrease volume
+        esp_err_t ret = audio_player_volume_down(VOLUME_STEP_PERCENT);
+        if (ret == ESP_OK) {
+            uint8_t volume = audio_player_get_volume();
+            sprintf(resp_str, "{\"status\": \"Volume decreased to %d%%\"}", volume);
+        } else {
+            sprintf(resp_str, "{\"error\": \"Failed to decrease volume: %s\"}", esp_err_to_name(ret));
+        }
+    }
     else if (strcmp(uri, "/api/mp3/play-embedded") == 0) {
         // Play MP3 data from the embedded sample
         esp_err_t ret = audio_player_play_mp3_data(sample_mp3, sample_mp3_len);
@@ -120,6 +154,15 @@ static esp_err_t data_get_handler(httpd_req_t *req) {
         } else {
             sprintf(resp_str, "{\"error\": \"Failed to start embedded MP3 playback: %s\"}", esp_err_to_name(ret));
         }
+    }
+    else if (strcmp(uri, "/api/status") == 0) {
+        // Get player status
+        bool is_playing = audio_player_is_playing();
+        bool is_paused = audio_player_is_paused();
+        uint8_t volume = audio_player_get_volume();
+        
+        sprintf(resp_str, "{\"status\": \"%s\", \"volume\": %d}", 
+                is_playing ? (is_paused ? "paused" : "playing") : "stopped", volume);
     }
     else {
         // Unknown command
@@ -163,7 +206,7 @@ void start_rest_server(void) {
         .user_ctx  = NULL
     };
 
-    // New MP3 endpoints
+    // MP3 endpoints
     httpd_uri_t mp3_play_uri = {
         .uri       = "/api/mp3/play",
         .method    = HTTP_GET,
@@ -178,8 +221,36 @@ void start_rest_server(void) {
         .user_ctx  = NULL
     };
 
+    httpd_uri_t mp3_pause_uri = {
+        .uri       = "/api/mp3/pause",
+        .method    = HTTP_GET,
+        .handler   = data_get_handler,
+        .user_ctx  = NULL
+    };
+
+    httpd_uri_t mp3_volume_up_uri = {
+        .uri       = "/api/mp3/volume-up",
+        .method    = HTTP_GET,
+        .handler   = data_get_handler,
+        .user_ctx  = NULL
+    };
+
+    httpd_uri_t mp3_volume_down_uri = {
+        .uri       = "/api/mp3/volume-down",
+        .method    = HTTP_GET,
+        .handler   = data_get_handler,
+        .user_ctx  = NULL
+    };
+
     httpd_uri_t mp3_embedded_uri = {
         .uri       = "/api/mp3/play-embedded",
+        .method    = HTTP_GET,
+        .handler   = data_get_handler,
+        .user_ctx  = NULL
+    };
+
+    httpd_uri_t status_uri = {
+        .uri       = "/api/status",
         .method    = HTTP_GET,
         .handler   = data_get_handler,
         .user_ctx  = NULL
@@ -192,7 +263,11 @@ void start_rest_server(void) {
         httpd_register_uri_handler(server, &volume_uri);
         httpd_register_uri_handler(server, &mp3_play_uri);
         httpd_register_uri_handler(server, &mp3_stop_uri);
+        httpd_register_uri_handler(server, &mp3_pause_uri);
+        httpd_register_uri_handler(server, &mp3_volume_up_uri);
+        httpd_register_uri_handler(server, &mp3_volume_down_uri);
         httpd_register_uri_handler(server, &mp3_embedded_uri);
+        httpd_register_uri_handler(server, &status_uri);
         ESP_LOGI(TAG, "HTTP server started");
     }
 }
@@ -227,6 +302,10 @@ void app_main(void) {
     // Initialize Audio Player
     ESP_ERROR_CHECK(audio_player_init(I2S_PORT_NUM));
     ESP_LOGI(TAG, "Audio player initialized");
+
+    // Initialize GPIO controls
+    ESP_ERROR_CHECK(gpio_controls_init());
+    ESP_LOGI(TAG, "GPIO controls initialized");
 
     // Start HTTP server
     start_rest_server();

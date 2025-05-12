@@ -24,9 +24,16 @@
 #define I2S_BITS_PER_SAMPLE     16      // 16-bit audio
 #define I2S_NUM_CHANNELS        2       // Stereo
 
+// Volume settings
+#define DEFAULT_VOLUME          80      // Default volume level (80%)
+#define MAX_VOLUME              100     // Maximum volume level (100%)
+#define MIN_VOLUME              0       // Minimum volume level (0%)
+
 // Player state
 static bool s_player_initialized = false;
 static bool s_player_playing = false;
+static bool s_player_paused = false;
+static uint8_t s_volume_level = DEFAULT_VOLUME;
 static TaskHandle_t s_player_task_handle = NULL;
 static int s_i2s_port = 0;
 static SemaphoreHandle_t s_player_mutex = NULL;
@@ -34,6 +41,7 @@ static SemaphoreHandle_t s_player_mutex = NULL;
 // File state
 static FILE* s_mp3_file = NULL;
 static char s_filepath[128] = {0};
+static long s_file_position = 0;
 
 // Memory playback state
 static const uint8_t* s_mp3_data = NULL;
@@ -50,6 +58,7 @@ static int16_t s_pcm_buffer[PCM_BUFFER_SIZE];
 static void mp3_player_task(void *pvParameters);
 static void mp3_memory_player_task(void *pvParameters);
 static esp_err_t init_i2s(int sample_rate, int channels);
+static void apply_volume_to_samples(int16_t* samples, size_t count);
 
 esp_err_t audio_player_init(int i2s_port) {
     if (s_player_initialized) {
@@ -412,6 +421,22 @@ static void mp3_player_task(void *pvParameters) {
             first_frame = false;
         }
 
+        // Check if we're paused
+        bool is_paused = false;
+        if (xSemaphoreTake(s_player_mutex, 0) == pdTRUE) {
+            is_paused = s_player_paused;
+            xSemaphoreGive(s_player_mutex);
+        }
+        
+        if (is_paused) {
+            // If paused, wait and loop without playing
+            vTaskDelay(pdMS_TO_TICKS(100));
+            continue;
+        }
+        
+        // Apply volume control to the decoded samples
+        apply_volume_to_samples(s_pcm_buffer, frame_info.outputSamps * frame_info.nChans);
+
         // Write PCM data to I2S
         size_t bytes_written = 0;
         i2s_write(s_i2s_port, s_pcm_buffer, frame_info.outputSamps * frame_info.nChans * sizeof(int16_t), 
@@ -532,6 +557,22 @@ static void mp3_memory_player_task(void *pvParameters) {
             first_frame = false;
         }
 
+        // Check if we're paused
+        bool is_paused = false;
+        if (xSemaphoreTake(s_player_mutex, 0) == pdTRUE) {
+            is_paused = s_player_paused;
+            xSemaphoreGive(s_player_mutex);
+        }
+        
+        if (is_paused) {
+            // If paused, wait and loop without playing
+            vTaskDelay(pdMS_TO_TICKS(100));
+            continue;
+        }
+        
+        // Apply volume control to the decoded samples
+        apply_volume_to_samples(s_pcm_buffer, frame_info.outputSamps * frame_info.nChans);
+
         // Write PCM data to I2S
         size_t bytes_written = 0;
         i2s_write(s_i2s_port, s_pcm_buffer, frame_info.outputSamps * frame_info.nChans * sizeof(int16_t), 
@@ -592,4 +633,143 @@ static esp_err_t init_i2s(int sample_rate, int channels) {
     
     ESP_LOGI(TAG, "I2S initialized - rate: %d Hz, channels: %d", sample_rate, channels);
     return ESP_OK;
+}
+
+esp_err_t audio_player_pause_resume(void) {
+    if (!s_player_initialized) {
+        ESP_LOGE(TAG, "Player not initialized");
+        return ESP_ERR_INVALID_STATE;
+    }
+
+    if (xSemaphoreTake(s_player_mutex, portMAX_DELAY) != pdTRUE) {
+        ESP_LOGE(TAG, "Failed to take player mutex");
+        return ESP_ERR_TIMEOUT;
+    }
+
+    if (!s_player_playing) {
+        xSemaphoreGive(s_player_mutex);
+        ESP_LOGW(TAG, "Nothing is playing to pause/resume");
+        return ESP_ERR_INVALID_STATE;
+    }
+
+    // Toggle pause state
+    s_player_paused = !s_player_paused;
+    
+    if (s_player_paused) {
+        // Save current file position if playing from file
+        if (!s_playing_from_memory && s_mp3_file != NULL) {
+            s_file_position = ftell(s_mp3_file);
+        }
+        ESP_LOGI(TAG, "Playback paused");
+    } else {
+        ESP_LOGI(TAG, "Playback resumed");
+    }
+
+    xSemaphoreGive(s_player_mutex);
+    return ESP_OK;
+}
+
+bool audio_player_is_paused(void) {
+    if (!s_player_initialized || !s_player_playing) {
+        return false;
+    }
+
+    bool paused = false;
+    if (xSemaphoreTake(s_player_mutex, portMAX_DELAY) == pdTRUE) {
+        paused = s_player_paused;
+        xSemaphoreGive(s_player_mutex);
+    }
+    return paused;
+}
+
+esp_err_t audio_player_set_volume(uint8_t volume_percent) {
+    if (!s_player_initialized) {
+        ESP_LOGE(TAG, "Player not initialized");
+        return ESP_ERR_INVALID_STATE;
+    }
+
+    if (volume_percent > MAX_VOLUME) {
+        volume_percent = MAX_VOLUME;
+    }
+
+    if (xSemaphoreTake(s_player_mutex, portMAX_DELAY) == pdTRUE) {
+        s_volume_level = volume_percent;
+        xSemaphoreGive(s_player_mutex);
+        ESP_LOGI(TAG, "Volume set to %d%%", volume_percent);
+        return ESP_OK;
+    }
+
+    ESP_LOGE(TAG, "Failed to take player mutex");
+    return ESP_ERR_TIMEOUT;
+}
+
+esp_err_t audio_player_volume_up(uint8_t step_percent) {
+    if (!s_player_initialized) {
+        ESP_LOGE(TAG, "Player not initialized");
+        return ESP_ERR_INVALID_STATE;
+    }
+
+    if (xSemaphoreTake(s_player_mutex, portMAX_DELAY) == pdTRUE) {
+        uint16_t new_volume = s_volume_level + step_percent;
+        if (new_volume > MAX_VOLUME) {
+            new_volume = MAX_VOLUME;
+        }
+        s_volume_level = new_volume;
+        xSemaphoreGive(s_player_mutex);
+        ESP_LOGI(TAG, "Volume increased to %d%%", s_volume_level);
+        return ESP_OK;
+    }
+
+    ESP_LOGE(TAG, "Failed to take player mutex");
+    return ESP_ERR_TIMEOUT;
+}
+
+esp_err_t audio_player_volume_down(uint8_t step_percent) {
+    if (!s_player_initialized) {
+        ESP_LOGE(TAG, "Player not initialized");
+        return ESP_ERR_INVALID_STATE;
+    }
+
+    if (xSemaphoreTake(s_player_mutex, portMAX_DELAY) == pdTRUE) {
+        if (s_volume_level > step_percent) {
+            s_volume_level -= step_percent;
+        } else {
+            s_volume_level = MIN_VOLUME;
+        }
+        xSemaphoreGive(s_player_mutex);
+        ESP_LOGI(TAG, "Volume decreased to %d%%", s_volume_level);
+        return ESP_OK;
+    }
+
+    ESP_LOGE(TAG, "Failed to take player mutex");
+    return ESP_ERR_TIMEOUT;
+}
+
+uint8_t audio_player_get_volume(void) {
+    uint8_t volume = DEFAULT_VOLUME;
+    
+    if (!s_player_initialized) {
+        return volume;
+    }
+
+    if (xSemaphoreTake(s_player_mutex, portMAX_DELAY) == pdTRUE) {
+        volume = s_volume_level;
+        xSemaphoreGive(s_player_mutex);
+    }
+    
+    return volume;
+}
+
+/**
+ * Apply volume scaling to PCM samples
+ */
+static void apply_volume_to_samples(int16_t* samples, size_t count) {
+    if (s_volume_level == MAX_VOLUME) {
+        return; // No need to adjust at max volume
+    }
+    
+    for (size_t i = 0; i < count; i++) {
+        // Scale the sample based on volume level (0-100%)
+        samples[i] = (int16_t)((int32_t)samples[i] * s_volume_level / MAX_VOLUME);
+    }
 } 
