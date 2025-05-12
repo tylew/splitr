@@ -5,6 +5,7 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "freertos/queue.h"
+#include "esp_timer.h"
 
 static const char *TAG = "GPIO_CONTROLS";
 
@@ -68,7 +69,7 @@ esp_err_t gpio_controls_init(void) {
     }
     
     // Install GPIO ISR service
-    ret = gpio_install_isr_service(ESP_INTR_FLAG_DEFAULT);
+    ret = gpio_install_isr_service(ESP_INTR_FLAG_LEVEL3);
     if (ret != ESP_OK && ret != ESP_ERR_INVALID_STATE) {
         // ESP_ERR_INVALID_STATE means ISR service already installed, which is OK
         ESP_LOGE(TAG, "Failed to install GPIO ISR service: %d", ret);

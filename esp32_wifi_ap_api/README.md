@@ -221,3 +221,40 @@ idf.py -p <port> flash
 # Monitor serial output
 idf.py -p <port> monitor
 ```
+
+## Memory Constraints and MP3 Playback
+
+Due to the memory constraints of the ESP32, the embedded MP3 sample feature has been disabled to prevent DRAM overflow. Instead, you should use the file-based playback method by uploading MP3 files to the SPIFFS filesystem.
+
+### How to Upload MP3 Files to SPIFFS
+
+1. Create a `data` folder in your project directory if it doesn't exist already:
+   ```
+   mkdir -p esp32_wifi_ap_api/data
+   ```
+
+2. Copy your MP3 file(s) to this folder. Keep the files reasonably small (under 1 MB is recommended):
+   ```
+   cp your_sample.mp3 esp32_wifi_ap_api/data/sample.mp3
+   ```
+
+3. Install the SPIFFS upload tool if you haven't already:
+   ```
+   pip install esptool
+   pip install --upgrade esp-idf-tool
+   ```
+
+4. Upload the SPIFFS data partition:
+   ```
+   idf.py -p [PORT] spiffs-flash
+   ```
+
+### Playing MP3 Files
+
+Once your MP3 files are uploaded to SPIFFS, you can play them using the API endpoints:
+
+- `/api/mp3/play` - Plays the default sample.mp3 file
+- `/api/mp3/stop` - Stops playback
+- `/api/mp3/pause` - Toggles pause/resume
+- `/api/mp3/volume-up` - Increases volume
+- `/api/mp3/volume-down` - Decreases volume

@@ -7,7 +7,6 @@
 #include "driver/uart.h"
 #include "audio_player.h"
 #include "gpio_controls.h"
-#include "sample_mp3.h"
 
 #define EXAMPLE_ESP_WIFI_SSID      "ESP32-Access-Point"
 #define EXAMPLE_ESP_WIFI_PASS      "123456789"
@@ -147,13 +146,8 @@ static esp_err_t data_get_handler(httpd_req_t *req) {
         }
     }
     else if (strcmp(uri, "/api/mp3/play-embedded") == 0) {
-        // Play MP3 data from the embedded sample
-        esp_err_t ret = audio_player_play_mp3_data(sample_mp3, sample_mp3_len);
-        if (ret == ESP_OK) {
-            strcpy(resp_str, "{\"status\": \"Started playing embedded MP3 sample\"}");
-        } else {
-            sprintf(resp_str, "{\"error\": \"Failed to start embedded MP3 playback: %s\"}", esp_err_to_name(ret));
-        }
+        // Replace embedded MP3 functionality with file-based playback
+        strcpy(resp_str, "{\"status\": \"Embedded MP3 feature disabled due to memory constraints. Use /api/mp3/play instead.\"}");
     }
     else if (strcmp(uri, "/api/status") == 0) {
         // Get player status
