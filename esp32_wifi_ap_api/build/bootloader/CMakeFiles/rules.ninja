@@ -318,7 +318,7 @@ rule C_STATIC_LIBRARY_LINKER____idf_main_
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /opt/homebrew/bin/cmake --regenerate-during-build -S/Users/devyn/esp/esp-idf/components/bootloader/subproject -B/Users/devyn/splitr/esp32_wifi_ap_api/build/bootloader
+  command = /opt/homebrew/bin/cmake --regenerate-during-build -S"/Users/devyn/Downloads/SP 25/CPSC 514/esp/esp-idf/components/bootloader/subproject" -B"/Users/devyn/Downloads/SP 25/CPSC 514/splitr/esp32_wifi_ap_api/build/bootloader"
   description = Re-running CMake...
   generator = 1
 

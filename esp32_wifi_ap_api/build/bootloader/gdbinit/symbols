@@ -17,4 +17,4 @@ set confirm off
 set confirm on
 
 # Load application symbols
-file /Users/devyn/splitr/esp32_wifi_ap_api/build/bootloader/bootloader.elf
+file /Users/devyn/Downloads/SP 25/CPSC 514/splitr/esp32_wifi_ap_api/build/bootloader/bootloader.elf

@@ -10,6 +10,8 @@ if("${CONFIG}" STREQUAL "" OR "${CONFIG}" STREQUAL "")
   "config/sdkconfig.h"
   "esp-idf/esptool_py/flasher_args.json.in"
   "esp-idf/mbedtls/x509_crt_bundle"
+  "esp32_wifi_ap_api.bin"
+  "esp32_wifi_ap_api.map"
   "flash_app_args"
   "flash_bootloader_args"
   "flash_project_args"
@@ -17,8 +19,6 @@ if("${CONFIG}" STREQUAL "" OR "${CONFIG}" STREQUAL "")
   "ldgen_libraries"
   "ldgen_libraries.in"
   "project_elf_src_esp32s3.c"
-  "test-project-1.bin"
-  "test-project-1.map"
   "x509_crt_bundle.S"
   )
 endif()

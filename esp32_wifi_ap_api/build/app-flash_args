@@ -1,2 +1,2 @@
 --flash_mode dio --flash_freq 80m --flash_size 2MB
-0x10000 test-project-1.bin
+0x10000 esp32_wifi_ap_api.bin

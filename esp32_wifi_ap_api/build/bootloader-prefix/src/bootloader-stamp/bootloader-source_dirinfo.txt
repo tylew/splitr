@@ -4,6 +4,6 @@
 
 method=source_dir
 command=
-source_dir=/Users/devyn/esp/esp-idf/components/bootloader/subproject
+source_dir=/Users/devyn/Downloads/SP 25/CPSC 514/esp/esp-idf/components/bootloader/subproject
 work_dir=
 
